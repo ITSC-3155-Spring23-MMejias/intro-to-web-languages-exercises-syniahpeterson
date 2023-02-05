@@ -1,0 +1,15 @@
+/* Syniah Peterson
+I used https://www.w3schools.com/css/css_howto.asp for reference 
+I also used https://www.w3schools.com/html/html_id.asp for reference */
+body{
+    background-color: lightcoral;
+    font: Tahoma;
+}
+
+#main-title{
+    text-align: center;
+}
+
+.content{
+    margin-bottom: 12px;
+}

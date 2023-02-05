@@ -1,0 +1,40 @@
+<!-- Syniah Peterson -->
+<!DOCTYPE html>
+<html>
+    <body>
+        <!--Lines 7-8 are textboxes with words in them to instruct the user for input 
+            Line 9 is a button to be clicked to proceed -->
+        <input type="text" id="txt-price" placeholder="Enter the price of the item">
+        <input type="text" id="txt-quantity" placeholder="Enter the quanity of the item">
+        <button id="btn-submit">Calculate</button>
+        <div id="output"></div>
+        <!--Lines 20-21 are variable declarations that are taken in from the textboxes created in lines 7-8
+            Line 22 reads that button click
+            Line 23 holds the outputted message the will go to the user 
+            Line 26-27 sets the varaibles equal to the inputted values
+            Line 28-29 adds price and quantity 
+            Line 32 returns the information
+            Line 34-35 calculates the price and rounds it
+            Line 36 sets the message to be outputted to the user -->
+        <script>
+            var priceInput = document.getElementById('txt-price');
+            var quantityInput = document.getElementById('txt-quantity');
+            var submitBtn = document.getElementById('btn-submit');
+            var output = document.getElementById('output');
+
+            submitBtn.addEventListener('click', function () {
+                var price = priceInput.value;
+                var quanity = quantityInput.value;
+                price = +price;
+                quanity = +quanity;
+                if (Number.isNaN(price) || Number.isNaN(quanity)) {
+                output.innerHTML = 'Invalid input';
+                return;
+                }
+                var totalPrice = price * quanity;
+                totalPrice = Math.round(totalPrice * 100) / 100;
+                output.innerHTML = quanity + ' items at $' + price + ' each is $' + totalPrice;
+            });
+        </script>
+    </body>
+</html>
